@@ -11,7 +11,7 @@ df = pd.read_excel("BBCA_Financial_Data.xlsx")
 
 # 2. Process
 
-# CLEAN BIG NUMBERS (76,962,905,000,000 → 76962905000000) ----
+# CLEAN BIG NUMBERS 
 def clean_big_number(x):
     if isinstance(x, str):
         x = x.replace(",", "")  # remove thousand separator
@@ -19,7 +19,7 @@ def clean_big_number(x):
             return float(x)
     return x
 
-#CLEAN PERCENT (5.83% → 0.0583) ----
+#CLEAN PERCENT (5.83% → 0.0583) 
 def clean_percent(x):
     if isinstance(x, str) and "%" in x:
         x = x.replace("%", "")
